@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Licensing & Hosting Cost Sheet - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8e8f5;
+            font-weight: 400;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            background: white;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover td {
+            background: #f8f9ff;
+            transition: background 0.3s ease;
+        }
+        
+        .price {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .recommended {
+            background: #f0f9ff;
+            border-left: 4px solid #667eea;
+        }
+        
+        .recommended td {
+            background: #f0f9ff;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+        
+        .limit-badge {
+            display: inline-block;
+            background: #f5576c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 0.75em;
+            margin-left: 5px;
+        }
+        
+        .development-costs {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid #e8e8f5;
+        }
+        
+        .development-costs ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .development-costs li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .development-costs li::before {
+            content: '▸';
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .notes-section {
+            background: #fff9e6;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #f0d998;
+        }
+        
+        .notes-section h3 {
+            color: #d4a017;
+            margin-bottom: 15px;
+        }
+        
+        .notes-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .notes-section li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .notes-section li::before {
+            content: '⚠';
+            color: #d4a017;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .summary-box h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px solid rgba(255,255,255,0.4);
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #e8e8f5;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+        
+        .limitation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .limitation-card {
+            background: #f8f9ff;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .limitation-card h4 {
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        
+        .limitation-card .value {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .limitation-card .subtitle {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+        }
+        
+        .warning-box {
+            background: #ffe6e6;
+            border: 1px solid #ffb3b3;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box strong {
+            color: #cc0000;
+        }
+        
+        .success-box {
+            background: #e6ffe6;
+            border: 1px solid #99ff99;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success-box strong {
+            color: #009900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Power BI Licensing & Technical Specifications</h1>
+            <div class="subtitle">Complete Cost Analysis with Data Limits & Technical Constraints</div>
+            <div class="date-badge">September 2025 | Australia (AUD)</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>💼 Development Licensing & Limits</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%">Component</th>
+                            <th style="width: 15%">Price (AUD/month)</th>
+                            <th style="width: 30%">Data & Technical Limits</th>
+                            <th style="width: 30%">Use Case & Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Power BI Pro</strong> (per user)</td>
+                            <td class="price">$21</td>
+                            <td>
+                                • <strong>Model Size:</strong> 1 GB max<br>
+                                • <strong>Refreshes:</strong> 8/day<br>
+                                • <strong>API Calls:</strong> 600/hour<br>
+                                • <strong>Dataflows:</strong> Not supported
+                            </td>
+                            <td>Essential for developers. Cannot embed for external users without licenses.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Power BI Premium Per User</strong></td>
+                            <td class="price">$35.90</td>
+                            <td>
+                                • <strong>Model Size:</strong> 100 GB max<br>
+                                • <strong>Refreshes:</strong> 48/day<br>
+                                • <strong>API Calls:</strong> 3,600/hour<br>
+                                • <strong>Paginated Reports:</strong> ✓
+                            </td>
+                            <td>Advanced development features. Still requires all viewers to have licenses.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>🌐 External Hosting Options - Detailed Specifications</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Solution</th>
+                            <th style="width: 12%">Price (AUD/month)</th>
+                            <th style="width: 20%">Data Limits</th>
+                            <th style="width: 20%">Performance</th>
+                            <th style="width: 28%">Key Features & Limitations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Power BI Embedded A1</strong></td>
+                            <td class="price">~$1,120</td>
+                            <td>
+                                • <strong>Model:</strong> 3 GB<br>
+                                • <strong>Memory:</strong> 3 GB<br>
+                                • <strong>Storage:</strong> 10 GB
+                            </td>
+                            <td>
+                                • 1 v-core<br>
+                                • ~50 concurrent users<br>
+                                • 8 refreshes/day
+                            </td>
+                            <td>
+                                ✓ Pause/resume capability<br>
+                                ✗ No incremental refresh<br>
+                                ✗ No deployment pipelines<br>
+                                ✓ Row-level security
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Power BI Embedded A2</strong></td>
+                            <td class="price">~$2,240</td>
+                            <td>
+                                • <strong>Model:</strong> 6 GB<br>
+                                • <strong>Memory:</strong> 6 GB<br>
+                                • <strong>Storage:</strong> 10 GB
+                            </td>
+                            <td>
+                                • 2 v-cores<br>
+                                • ~100 concurrent users<br>
+                                • 16 refreshes/day
+                            </td>
+                            <td>
+                                ✓ Pause/resume capability<br>
+                                ✓ Incremental refresh<br>
+                                ✗ No deployment pipelines<br>
+                                ✓ XMLA endpoints (read)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft Fabric F2</strong></td>
+                            <td class="price">~$234</td>
+                            <td>
+                                • <strong>Model:</strong> 3 GB<br>
+                                • <strong>Memory:</strong> 3 GB<br>
+                                • <strong>CUs:</strong> 2 units
+                            </td>
+                            <td>
+                                • 0.25 v-cores<br>
+                                • ~10-20 users<br>
+                                • 8 refreshes/day
+                            </td>
+                            <td>
+                                ✓ All Fabric workloads<br>
+                                ✗ Not production ready<br>
+                                ✗ Limited concurrent queries<br>
+                                ✓ OneLake storage included
+                            </td>
+                        </tr>
+                        <tr class="recommended">
+                            <td><strong>Microsoft Fabric F8</strong> <span class="badge">RECOMMENDED</span></td>
+                            <td class="price">~$937</td>
+                            <td>
+                                • <strong>Model:</strong> 10 GB<br>
+                                • <strong>Memory:</strong> 10 GB<br>
+                                • <strong>CUs:</strong> 8 units
+                            </td>
+                            <td>
+                                • 1 v-core<br>
+                                • ~100 concurrent users<br>
+                                • 48 refreshes/day
+                            </td>
+                            <td>
+                                ✓ All Premium features<br>
+                                ✓ Deployment pipelines<br>
+                                ✓ XMLA read/write<br>
+                                ✓ Auto-scale ready<br>
+                                ✓ Incremental refresh
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft Fabric F64</strong></td>
+                            <td class="price">~$7,500</td>
+                            <td>
+                                • <strong>Model:</strong> 25 GB<br>
+                                • <strong>Memory:</strong> 50 GB<br>
+                                • <strong>CUs:</strong> 64 units
+                            </td>
+                            <td>
+                                • 8 v-cores<br>
+                                • ~500+ concurrent users<br>
+                                • 48 refreshes/day
+                            </td>
+                            <td>
+                                ✓ Enterprise scale<br>
+                                ✓ Maximum performance<br>
+                                ✓ All features included<br>
+                                ✓ Priority support
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>📊 Data & Technical Limitations Comparison</h2>
+                
+                <div class="limitation-grid">
+                    <div class="limitation-card">
+                        <h4>Maximum Dataset Size</h4>
+                        <div class="value">10 GB</div>
+                        <div class="subtitle">Fabric F8 / Premium</div>
+                    </div>
+                    <div class="limitation-card">
+                        <h4>Refresh Frequency</h4>
+                        <div class="value">48/day</div>
+                        <div class="subtitle">Every 30 minutes</div>
+                    </div>
+                    <div class="limitation-card">
+                        <h4>DirectQuery Limit</h4>
+                        <div class="value">1M rows/query</div>
+                        <div class="subtitle">Per visual</div>
+                    </div>
+                    <div class="limitation-card">
+                        <h4>API Calls</h4>
+                        <div class="value">200K/hour</div>
+                        <div class="subtitle">Fabric F8</div>
+                    </div>
+                    <div class="limitation-card">
+                        <h4>Dataflows Storage</h4>
+                        <div class="value">100 TB</div>
+                        <div class="subtitle">Per capacity</div>
+                    </div>
+                    <div class="limitation-card">
+                        <h4>Report Page Limit</h4>
+                        <div class="value">200 pages</div>
+                        <div class="subtitle">Per report</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Critical Limitations:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Single dataset cannot exceed capacity memory limit</li>
+                        <li>Incremental refresh requires Premium/Fabric capacity</li>
+                        <li>Real-time streaming limited to 1M rows/hour</li>
+                        <li>Maximum 1,000 datasets per capacity</li>
+                        <li>30-second query timeout for DirectQuery</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>☁️ Azure Infrastructure & Additional Services</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%">Component</th>
+                            <th style="width: 15%">Price (AUD/month)</th>
+                            <th style="width: 30%">Specifications</th>
+                            <th style="width: 30%">Limitations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Web App Hosting</strong> (Basic B1)</td>
+                            <td class="price">$68</td>
+                            <td>
+                                • 1 core, 1.75 GB RAM<br>
+                                • 10 GB storage<br>
+                                • SSL included
+                            </td>
+                            <td>
+                                • Max 3 instances<br>
+                                • No auto-scale<br>
+                                • 165 MB/s bandwidth
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard S1</strong></td>
+                            <td class="price">$116</td>
+                            <td>
+                                • 1 core, 1.75 GB RAM<br>
+                                • 50 GB storage<br>
+                                • Auto-scale ready
+                            </td>
+                            <td>
+                                • Max 10 instances<br>
+                                • 220 MB/s bandwidth<br>
+                                • Traffic manager support
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Premium P1V2</strong></td>
+                            <td class="price">$232</td>
+                            <td>
+                                • 1 core, 3.5 GB RAM<br>
+                                • 250 GB storage<br>
+                                • Enhanced performance
+                            </td>
+                            <td>
+                                • Max 30 instances<br>
+                                • Unlimited bandwidth<br>
+                                • Isolated network
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>On-Premises Data Gateway</strong></td>
+                            <td class="price">$0</td>
+                            <td>
+                                • Unlimited data sources<br>
+                                • High availability mode<br>
+                                • Clustering support
+                            </td>
+                            <td>
+                                • Requires Windows Server<br>
+                                • 1 refresh/30 min limit<br>
+                                • Network latency dependent
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>🚀 Performance & Scaling Guidelines</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User Load</th>
+                            <th>Recommended SKU</th>
+                            <th>Estimated Performance</th>
+                            <th>Cost (AUD/month)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1-25 users</strong><br><small>Light usage</small></td>
+                            <td>Fabric F2 + Basic Web App</td>
+                            <td>5 sec avg load time<br>8 refreshes/day</td>
+                            <td class="price">~$302</td>
+                        </tr>
+                        <tr class="recommended">
+                            <td><strong>25-100 users</strong><br><small>Production</small></td>
+                            <td>Fabric F8 + Standard Web App</td>
+                            <td>2-3 sec avg load time<br>48 refreshes/day</td>
+                            <td class="price">~$1,053</td>
+                        </tr>
+                        <tr>
+                            <td><strong>100-500 users</strong><br><small>Enterprise</small></td>
+                            <td>Fabric F64 + Premium Web App</td>
+                            <td>&lt;2 sec avg load time<br>48 refreshes/day</td>
+                            <td class="price">~$7,732</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success-box">
+                    <strong>✓ Best Practices for Optimal Performance:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Keep individual dataset size under 50% of capacity memory</li>
+                        <li>Use incremental refresh for datasets over 1 GB</li>
+                        <li>Implement row-level security at data model level</li>
+                        <li>Cache frequently accessed reports</li>
+                        <li>Schedule refreshes during off-peak hours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Development & Integration Costs</h2>
+                <div class="development-costs">
+                    <h3>One-Time Implementation (Estimated Hours)</h3>
+                    <ul>
+                        <li><strong>Embedding Implementation:</strong> 40-80 hours</li>
+                        <li><strong>Authentication & Security Setup:</strong> 20-30 hours</li>
+                        <li><strong>Row-Level Security Configuration:</strong> 15-25 hours</li>
+                        <li><strong>Performance Optimization:</strong> 10-20 hours</li>
+                        <li><strong>Testing & Deployment:</strong> 20-30 hours</li>
+                        <li><strong>Documentation & Knowledge Transfer:</strong> 10-20 hours</li>
+                    </ul>
+                    <p style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                        <strong>Total Estimated Hours:</strong> 115-205 hours<br>
+                        <em style="color: #7f8c8d;">* Professional services rates to be applied based on engagement terms</em>
+                    </p>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h3>📌 Critical Technical Considerations</h3>
+                <ul>
+                    <li><strong>Dataset Memory Rule:</strong> Single dataset cannot exceed 50% of capacity memory for optimal performance.</li>
+                    <li><strong>Query Timeout:</strong> DirectQuery has 30-second timeout; Live connections have 120-second timeout.</li>
+                    <li><strong>Embedding Tokens:</strong> Expire after 1 hour; implement token refresh logic in application.</li>
+                    <li><strong>API Rate Limits:</strong> 200 calls per hour per user for Pro; 200,000 per hour for Premium capacity.</li>
+                    <li><strong>Dataflow Limitations:</strong> Only available in Premium/Fabric capacities, not in Pro licenses.</li>
+                    <li><strong>Export Limitations:</strong> PDF/PowerPoint export limited to 50 pages; Excel export limited to 150,000 rows.</li>
+                    <li><strong>Streaming Dataset:</strong> Limited to 1M rows/hour with 200K row retention in Premium.</li>
+                    <li><strong>Mobile Offline:</strong> Reports limited to 250 MB for offline viewing.</li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>💰 Recommended Solution Summary (100 Users)</h3>
+                <div class="summary-item">
+                    <span>Power BI Pro (3 developers)</span>
+                    <span>$63</span>
+                </div>
+                <div class="summary-item">
+                    <span>Microsoft Fabric F8 Capacity</span>
+                    <span>$937</span>
+                </div>
+                <div class="summary-item">
+                    <span>Azure Standard Web App (S1)</span>
+                    <span>$116</span>
+                </div>
+                <div class="summary-item">
+                    <span>Data Gateway</span>
+                    <span>$0</span>
+                </div>
+                <div class="summary-item">
+                    <span><strong>Total Monthly Cost (AUD)</strong></span>
+                    <span><strong>~$1,116</strong></span>
+                </div>
+            </div>
+
+            <div class="section" style="margin-top: 30px;">
+                <h2>📋 Quick Decision Matrix</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>If You Need...</th>
+                            <th>Choose...</th>
+                            <th>Monthly Cost (AUD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Development/Testing Only</td>
+                            <td>Power BI Pro + Fabric F2</td>
+                            <td class="price">$255</td>
+                        </tr>
+                        <tr>
+                            <td>Small Production (≤25 users)</td>
+                            <td>Embedded A1 + Basic Web</td>
+                            <td class="price">$1,188</td>
+                        </tr>
+                        <tr class="recommended">
+                            <td>Standard Production (25-100 users)</td>
+                            <td>Fabric F8 + Standard Web</td>
+                            <td class="price">$1,116</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise Scale (100+ users)</td>
+                            <td>Fabric F64 + Premium Web</td>
+                            <td class="price">$7,732</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Prepared by:</strong> Quantium DART Team | <strong>Client:</strong> Discovery/Bankmed</p>
+            <p style="margin-top: 10px;">All prices exclude GST. Microsoft pricing subject to change. Verify exact costs via Azure Portal at purchase.</p>
+            <p style="margin-top: 5px; font-size: 0.85em;">Data limits and performance metrics based on Microsoft documentation as of September 2025.</p>
+        </div>
+    </div>
+</body>
+</html>
